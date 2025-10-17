@@ -1,4 +1,4 @@
-// TOGGLE MENU CASCATA
+// Garantindo que o menu funcione corretamente
 const headerMenu = document.querySelector(".header__menu"),
   menuBtn = document.querySelector(".menu-btn"),
   headerMenuItems = headerMenu.querySelectorAll("li a");
