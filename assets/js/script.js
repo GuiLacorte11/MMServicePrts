@@ -29,18 +29,3 @@ const header = document.querySelector("header");
 window.addEventListener("scroll", () => {
   header.classList.toggle("sticky", window.scrollY > 0);
 });
-
-// TOGGLE DARK/LIGHT MODE
-const themeToggleBtn = document.createElement("button");
-themeToggleBtn.textContent = "Modo Escuro";
-themeToggleBtn.classList.add("theme-toggle-btn");
-document.body.appendChild(themeToggleBtn);
-
-// Adiciona funcionalidade ao botão
-const toggleTheme = () => {
-  document.body.classList.toggle("dark-mode");
-  const isDarkMode = document.body.classList.contains("dark-mode");
-  themeToggleBtn.textContent = isDarkMode ? "Modo Claro" : "Modo Escuro";
-};
-
-themeToggleBtn.addEventListener("click", toggleTheme);
