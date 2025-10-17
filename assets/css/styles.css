@@ -180,7 +180,22 @@ header.sticky {
 }
 
 .header__menu {
-    gap: 1rem;
+    display: none; /* Esconde o menu por padrão */
+}
+
+.header__menu.show {
+    display: flex; /* Mostra o menu quando ativado */
+    flex-direction: column; /* Alinha os itens na vertical */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(192, 74, 226, 0.9); /* Fundo roxo translúcido */
+    color: #fff; /* Letras brancas */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 998;
 }
 
 .header__menu li a {
@@ -902,25 +917,33 @@ footer {
     }
 }
 
-@media screen and (max-width: 480px) {
-    .hero__content h1 {
-        font-size: 1.5rem;
+/* MENU SANDUICHE VISÍVEL APENAS EM TELAS MENORES */
+.menu-btn {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: block;
     }
 
-    .hero__content p {
-        font-size: 0.8rem;
+    .header__menu {
+        display: none; /* Esconde o menu por padrão em telas menores */
     }
 
-    .hero__img img {
-        max-width: 100%;
+    .header__menu.show {
+        transform: translateX(0);
     }
 
-    .project__title {
-        font-size: 1.5rem;
+    .header__menu li a {
+        color: #fff;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        transition: color 0.3s;
     }
 
-    .project__text {
-        font-size: 0.8rem;
+    .header__menu li a:hover {
+        color: #e0e0e0;
     }
 }
 
@@ -1055,43 +1078,4 @@ footer {
     width: 25px;
     top: 10px;
     left: 14%;
-}
-
-/* MENU SANDUICHE */
-.menu-btn {
-    display: block;
-    z-index: 999;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.header__menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(192, 74, 226, 0.9); /* Fundo roxo translúcido */
-    color: #fff; /* Letras brancas */
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 998;
-}
-
-.header__menu.show {
-    transform: translateX(0);
-}
-
-.header__menu li a {
-    color: #fff; /* Letras brancas */
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    transition: color 0.3s;
-}
-
-.header__menu li a:hover {
-    color: #e0e0e0; /* Cor mais clara ao passar o mouse */
 }
