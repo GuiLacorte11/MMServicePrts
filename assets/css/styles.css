@@ -707,7 +707,7 @@ footer {
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
     /* GLOBAL */
     .container {
@@ -853,6 +853,75 @@ footer {
         text-align: center;
     }
 
+}
+
+@media screen and (max-width: 768px) {
+    /* RESPONSIVE HERO SECTION */
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1rem;
+    }
+
+    .hero__content {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .hero__content h1 {
+        font-size: 2rem;
+    }
+
+    .hero__content p {
+        font-size: 1rem;
+    }
+
+    .hero__img {
+        width: 100%;
+    }
+
+    /* PROJECTS */
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project__img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .project__content {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero__content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero__content p {
+        font-size: 0.8rem;
+    }
+
+    .hero__img img {
+        max-width: 100%;
+    }
+
+    .project__title {
+        font-size: 1.5rem;
+    }
+
+    .project__text {
+        font-size: 0.8rem;
+    }
 }
 
 /* DESIGN ELEMENTS */
